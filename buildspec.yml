@@ -19,7 +19,7 @@ phases:
 
   post_build:
     commands:
-      - aws s3 cp s3://${AWS_S3_BUCKET}/node-express-serverless/.env .env"
+      - aws s3 cp s3://${AWS_S3_BUCKET}/node-express-serverless/.env .env
       - yarn deploy:prod
 
 cache:
