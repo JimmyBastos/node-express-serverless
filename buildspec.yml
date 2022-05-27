@@ -1,0 +1,26 @@
+version: 0.2
+run-as: root
+
+phases:
+  install:
+    commands:
+      - n 16 # install node 16
+      - npm install -g yarn
+      - npm install -g serverless
+
+  pre_build:
+    commands:
+      - yarn install
+
+  build:
+    commands:
+      - yarn build
+      - yarn install --prune
+
+  post_build:
+    commands:
+      - yarn deploy:prod
+
+cache:
+  paths:
+    - node_modules/**/*
