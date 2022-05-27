@@ -13,7 +13,6 @@ provider:
 package:
   patterns:
     - '!src/**'
-    - '!node_modules/**'
 
 functions:
   api:
