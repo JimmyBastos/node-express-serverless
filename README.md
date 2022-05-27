@@ -1,6 +1,6 @@
 ## Description
 
-Build express apps with serverless architectures using AWS Lambda
+Build express apps on top of AWS Lambda with serverless architectures 
 
 ## Enviroment
 
