@@ -14,10 +14,6 @@ $ cp .env.example .env
 $ npm install
 ```
 
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ```bash
