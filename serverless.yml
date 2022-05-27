@@ -13,9 +13,18 @@ provider:
 package:
   patterns:
     - '!src/**'
+    - '!node_modules/**'
 
 functions:
   api:
     handler: dist/serverless.handler
     events:
       - httpApi: '*'
+    fileSystemConfig:
+      localMountPath: /mnt/efs
+      arn: ${env:AWS_EFS_ACCESS_POINT_ARN}
+    vpc:
+      securityGroupIds:
+        - ${env:AWS_SECURITY_GROUP}
+      subnetIds:
+        - ${env:AWS_SUBNET_ID}

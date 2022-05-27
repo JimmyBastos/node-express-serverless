@@ -19,6 +19,7 @@ phases:
 
   post_build:
     commands:
+      - cp -r node_modules $CODEBUILD_EFS
       - yarn deploy:prod
 
 cache:
