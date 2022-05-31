@@ -9,6 +9,7 @@
     "deploy:dev": "serverless deploy --stage dev",
     "deploy:prod": "serverless deploy --stage production",
     "lint:fix": "eslint --fix ./src/**/*.js",
+    "prebuild": "rimraf dist",
     "predeploy:dev": "yarn build"
   },
   "dependencies": {
