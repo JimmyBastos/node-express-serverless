@@ -4,18 +4,36 @@ useDotenv: true
 
 plugins:
   - serverless-dotenv-plugin
+  - serverless-layers
 
 provider:
   name: aws
   runtime: nodejs14.x
   region: us-east-1
+  deploymentBucket:
+    name: me.brance.deployment
 
 package:
+  excludeDevDependencies: true
   patterns:
     - '!src/**'
+    - '!node_modules/**'
+
+custom:
+  serverless-layers:
+    packageManager: yarn
+    dependenciesPath: ./package.json
 
 functions:
   api:
     handler: dist/serverless.handler
     events:
       - httpApi: '*'
+    # fileSystemConfig:
+    #   localMountPath: /mnt/efs
+    #   arn: ${env:AWS_EFS_ACCESS_POINT}
+    # vpc:
+    #   securityGroupIds:
+    #     - ${env:AWS_SECURITY_GROUP}
+    #   subnetIds:
+    #     - ${env:AWS_SUBNET_ID}

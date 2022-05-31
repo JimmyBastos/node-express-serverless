@@ -1,6 +1,6 @@
 ## Description
 
-Build express apps on top of AWS Lambda with serverless architectures 
+Build express apps on top of AWS Lambda with serverless architectures
 
 ## Enviroment
 
@@ -38,12 +38,19 @@ $ npm run deploy:prod
 
 Here are the policies you have to attach to your User/CodePipeLineRole to be able to deploy using CloudFormation.
 
-- AWSLambdaFullAccess
+- AWSLambda_FullAccess
 - AmazonS3FullAccess
 - IAMFullAccess
 - CloudWatchFullAccess
 - AmazonAPIGatewayAdministrator (v2)
-- CloudFormationAdministrator
+- AWSCloudFormationFullAccess
+
+```bash
+$ serverless config credentials \
+  --provider aws \
+  --key AKIAIOSFODNN7EXAMPLE \
+  --secret wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
 
 ## Todos
 
