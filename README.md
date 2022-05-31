@@ -54,5 +54,6 @@ $ serverless config credentials \
 
 ## Todos
 
-- [ ] Amazon EFS integration for node_modules storage
-- [ ] Dinamically load .env variables on aws codebuild
+- [x] Add node_modules to lambda layers
+- [x] Add amazon EFS setup
+- [x] Dinamically load .env variables on aws codebuild
